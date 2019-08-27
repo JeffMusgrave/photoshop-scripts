@@ -1,3 +1,5 @@
+//Photoshop CC currently only supports the ancient JS ES4 :-(
+
 //Files and Folders to Run
 var allItems = {
     "AMB": [
@@ -77,9 +79,8 @@ var allItems = {
     ]    
 }
 
-//
-//
-//
+
+// Object.keys doesn't exist in ES4. Polyfill below for compatibility.
 // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 if (!Object.keys) {
     Object.keys = (function() {
@@ -121,15 +122,11 @@ if (!Object.keys) {
       };
     }());
   }
-//
-//
-//
+// End Object.keys polyfill
 
 
-//CODE STARTS HERE:
-//iterate through each action set
-
-//Iterate through each Action Folder/Set
+//ITERATION CODE STARTS HERE:
+//  iterate through each Photoshop Action Set
 for (n = 0; n < Object.keys(allItems).length; n++) {
 
     //iterate through each set's list of actions to perform 
@@ -146,13 +143,14 @@ for (n = 0; n < Object.keys(allItems).length; n++) {
         }   //end [m]
     
         //Open Image[i] per Folder[j]
-        ////take first element in array fld (each fld contains list of files for that subfolder)
-        ////determine length, iterate over length
+        //  take first element in array fld
+        //  each fld[num] (or folder) contains list of images
+        //  determine length of list and iterate.
         for (i = 0; i < fld[0].length; i++) {
             
-            ////we determined above that the list of files is fld.length
-            ////since we are combining eg: fld[0] image 1, and fld[1] image 1,
-            ////we must now open each subfolder that exists, and open the corresponding image in PS.
+            //  since we are combining files, eg: fld[0] image 1, and fld[1] image 1,
+            //  we must now open each relevant folder 
+            //  then open only the corresponding image for this iteration 
             for (j = 0; j < fld.length; j++){
                 open(fld[j][i]);
             }
@@ -170,6 +168,8 @@ for (n = 0; n < Object.keys(allItems).length; n++) {
     }   //end [k]
 
 }   //end[n]
+//ITERATION CODE ENDS HERE.
+
 
 //pad with leading zeroes from StackOverflow: https://stackoverflow.com/a/10073788
 function pad(n, width, z) {
@@ -177,6 +177,7 @@ function pad(n, width, z) {
     n = n + '';
     return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
+
 
 //save file function
 function SavePNG(saveFile){
