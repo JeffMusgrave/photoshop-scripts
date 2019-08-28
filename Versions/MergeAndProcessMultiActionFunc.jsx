@@ -1,4 +1,4 @@
-//Photoshop CC currently only supports the ancient JS ES4 :-(
+//Photoshop CC currently only supports the ancient JS ES3 :-(
 //This version isn't as clear... IMO
 
 //Files and Folders to Run
@@ -24,7 +24,7 @@ var allItems = {
 }
 
 
-// Object.keys doesn't exist in ES4. Polyfill below for compatibility.
+// Object.keys doesn't exist in ES3. Polyfill below for compatibility.
 // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 if (!Object.keys) {
     Object.keys = (function() {
