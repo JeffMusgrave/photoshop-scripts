@@ -2,193 +2,137 @@
 
 //Files and Folders to Run
 var allItems = {
-    "AMB": [
-        {
-            "action": "Tunnel",
-            "outputName": "TunnelOne_PSProc", 
-            "folders": [
-                "M:/SinglesVideos_WCT/Tunnel/TunnelOne/TunnelOne/TunnelOne_57-bek5__",
-                "M:/SinglesVideos_WCT/Tunnel/TunnelOne/TunnelOne/TunnelOne_33-aboriginal-dots__"
-            ],
-        },
-        {
-            "action": "WaterFlow",
-            "outputName": "WaterFlowCement_PSProc", 
-            "folders": [
-                "M:/SinglesVideos_WCT/WaterFlow/WaterFlowCement/WaterFlowCement/WaterFlowCement_53-bek1__",
-                "M:/SinglesVideos_WCT/WaterFlow/WaterFlowCement/WaterFlowCement/WaterFlowCement_57-bek5__"
-            ],
-        },
-        {
-            "action": "WaterFlow",
-            "outputName": "WaterFlowRed_PSProc", 
-            "folders": [
-                "M:/SinglesVideos_WCT/WaterFlow/WaterFlowRed/WaterFlowRed/WaterFlowRed_53-bek1__",
-                "M:/SinglesVideos_WCT/WaterFlow/WaterFlowRed/WaterFlowRed/WaterFlowRed_57-bek5__"
-            ],
-        },
-        {
-            "action": "WaterFlow",
-            "outputName": "WaterFlowRock_PSProc", 
-            "folders": [
-                "M:/SinglesVideos_WCT/WaterFlow/WaterFlowRock/WaterFlowRock/WaterFlowRock_53-bek1__",
-                "M:/SinglesVideos_WCT/WaterFlow/WaterFlowRock/WaterFlowRock/WaterFlowRock_57-bek5__"
-            ],
-        },
-        {
-            "action": "Fountain",
-            "outputName": "WaterFountain_PSProc", 
-            "folders": [
-                "M:/SinglesVideos_WCT/WaterFountain/WaterFountainOne/WaterFountainOne/WaterFountainOne_46-abstract-red-green-sharp__",
-                "M:/SinglesVideos_WCT/WaterFountain/WaterFountainOne/WaterFountainOne/WaterFountainOne_62-preyinglion__"
-            ],
-        },
-        {
-            "action": "Micro",
-            "outputName": "WaterMicroFall_PSProc", 
-            "folders": [
-                "M:/SinglesVideos_WCT/WaterShallow/WaterShallowOne/WaterShallowOne/WaterShallowOne_8-htt-colors-swirl__",
-                "M:/SinglesVideos_WCT/WaterShallow/WaterShallowOne/WaterShallowOne/WaterShallowOne_32-bizarre__"
-                
-            ],
-        },
-        {
-            "action": "Shallow",
-            "outputName": "WaterShallowOne_PSProc", 
-            "folders": [
-                "M:/SinglesVideos_WCT/WaterShallow/WaterShallowOne/WaterShallowOne/WaterShallowOne_8-htt-colors-swirl__",
-                "M:/SinglesVideos_WCT/WaterShallow/WaterShallowOne/WaterShallowOne/WaterShallowOne_32-bizarre__"
-            ],
-        },
-        {
-            "action": "Shallow",
-            "outputName": "WaterShallowTwo_PSProc", 
-            "folders": [
-                "M:/SinglesVideos_WCT/WaterShallow/WaterShallowTwo/WaterShallowTwo/WaterShallowTwo_8-htt-colors-swirl__",
-                "M:/SinglesVideos_WCT/WaterShallow/WaterShallowTwo/WaterShallowTwo/WaterShallowTwo_32-bizarre__"
-            ],
-        },
-        {
-            "action": "WaterWall",
-            "outputName": "WaterWall_PSProc", 
-            "folders": [
-                "M:/SinglesVideos_WCT/WaterWall/WaterWallOne/WaterWallOne/WaterWallOne_47-strands-psychedelic__",
-                "M:/SinglesVideos_WCT/WaterWall/WaterWallOne/WaterWallOne/WaterWallOne_62-preyinglion__"
-            ],
-        },
-    ]    
+  "AMB": [
+    {
+      "action": "Tunnel",
+      "outputName": "TunnelOne_PSProcTEST", 
+      "folders": [
+          "M:/SinglesVideos_WCT/Tunnel/TunnelOne/TunnelOne/TunnelOne_57-bek5__",
+          "M:/SinglesVideos_WCT/Tunnel/TunnelOne/TunnelOne/TunnelOne_33-aboriginal-dots__"
+      ],
+    },
+    {
+      "action": "WaterFlow",
+      "outputName": "WaterFlowCement_PSProc", 
+      "folders": [
+          "M:/SinglesVideos_WCT/WaterFlow/WaterFlowCement/WaterFlowCement/WaterFlowCement_53-bek1__",
+          "M:/SinglesVideos_WCT/WaterFlow/WaterFlowCement/WaterFlowCement/WaterFlowCement_57-bek5__"
+      ],
+    },
+  ] //end "AMB" 
 }
-
 
 // Object.keys doesn't exist in ES4. Polyfill below for compatibility.
 // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 if (!Object.keys) {
-    Object.keys = (function() {
-      'use strict';
-      var hasOwnProperty = Object.prototype.hasOwnProperty,
-          hasDontEnumBug = !({ toString: null }).propertyIsEnumerable('toString'),
-          dontEnums = [
-            'toString',
-            'toLocaleString',
-            'valueOf',
-            'hasOwnProperty',
-            'isPrototypeOf',
-            'propertyIsEnumerable',
-            'constructor'
-          ],
-          dontEnumsLength = dontEnums.length;
-  
-      return function(obj) {
-        if (typeof obj !== 'function' && (typeof obj !== 'object' || obj === null)) {
-          throw new TypeError('Object.keys called on non-object');
+  Object.keys = (function() {
+    'use strict';
+    var hasOwnProperty = Object.prototype.hasOwnProperty,
+      hasDontEnumBug = !({ toString: null }).propertyIsEnumerable('toString'),
+      dontEnums = [
+        'toString',
+        'toLocaleString',
+        'valueOf',
+        'hasOwnProperty',
+        'isPrototypeOf',
+        'propertyIsEnumerable',
+        'constructor'
+      ],
+      dontEnumsLength = dontEnums.length;
+
+    return function(obj) {
+      if (typeof obj !== 'function' && (typeof obj !== 'object' || obj === null)) {
+        throw new TypeError('Object.keys called on non-object');
+      }
+
+      var result = [], prop, i;
+
+      for (prop in obj) {
+        if (hasOwnProperty.call(obj, prop)) {
+          result.push(prop);
         }
-  
-        var result = [], prop, i;
-  
-        for (prop in obj) {
-          if (hasOwnProperty.call(obj, prop)) {
-            result.push(prop);
+      }
+
+      if (hasDontEnumBug) {
+        for (i = 0; i < dontEnumsLength; i++) {
+          if (hasOwnProperty.call(obj, dontEnums[i])) {
+            result.push(dontEnums[i]);
           }
         }
-  
-        if (hasDontEnumBug) {
-          for (i = 0; i < dontEnumsLength; i++) {
-            if (hasOwnProperty.call(obj, dontEnums[i])) {
-              result.push(dontEnums[i]);
-            }
-          }
-        }
-        return result;
-      };
-    }());
-  }
+      }
+      return result;
+    };
+  }());
+}
 // End Object.keys polyfill
 
 
+//Store all top level Action Set keys in an array
+var actionSets = Object.keys(allItems);
+
 //ITERATION CODE STARTS HERE:
 //  iterate through each Photoshop Action Set
-for (n = 0; n < Object.keys(allItems).length; n++) {
-
+(function(){
+  for (n = 0; n < actionSets.length; n++) {
+    
+    var currentActionSet = actionSets[n]; 
+    var currentScene = allItems[currentActionSet]
+    
     //iterate through each set's list of actions to perform 
-    for (k = 0; k < allItems.AMB.length; k++) {
-
-        // var outputName = "CarWall_PS_Proc";
-        var outputFolder = Folder('M:/AMB/PS_Proc/' + allItems.AMB[k].outputName + "/"); 
-        if (!outputFolder.exists) {outputFolder.create();}
+    for (k = 0; k < currentScene.length; k++) {
+      
+      var currentAction = currentScene[k];
     
-        //Array of folders containing images to combine
-        var fld = []
-        for (m = 0; m < allItems.AMB[k].folders.length; m++) {
-            fld[m] = Folder(allItems.AMB[k].folders[m]).getFiles(/\.(jpg|png)$/i)
-        }   //end [m]
+      //Array of folders containing images to combine
+      var folderArr = []
+      
+      for (m = 0; m < currentAction.folders.length; m++) {
+          folderArr[m] = Folder(currentAction.folders[m]).getFiles(/\.(jpg|png)$/i)
+      }   //end [m]
     
-        //Open Image[i] per Folder[j]
-        //  take first element in array fld
-        //  each fld[num] (or folder) contains list of images
-        //  determine length of list and iterate.
-        for (i = 0; i < fld[0].length; i++) {
-            
-            //  since we are combining files, eg: fld[0] image 1, and fld[1] image 1,
-            //  we must now open each relevant folder 
-            //  then open only the corresponding image for this iteration 
-            for (j = 0; j < fld.length; j++){
-                open(fld[j][i]);
-            }
-            
-            //RUN ACTION
-            doAction(allItems.AMB[k].action, Object.keys(allItems)[n]);
-    
-            //Save and close image
-            var saveImage = allItems.AMB[k].outputName + "_" + pad(i, 4);
-            SavePNG(saveImage);
-            app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+      //eg: open: folder 1 image 1, folder 2 image 1 --> then combine, move to next image and cycle through folders
+      for (i = 0; i < folderArr[0].length; i++) {
+          
+        for (j = 0; j < folderArr.length; j++){
+          open(folderArr[j][i]);
+        }
         
-        }   //end [j][i]
+        //RUN ACTION
+        doAction(currentAction.action, currentActionSet);
 
+        //Save and close image
+        var outputFolder = Folder('M:/AMB/PS_Proc/' + currentAction.outputName + "/"); 
+        if (!outputFolder.exists) {outputFolder.create();}
+        
+        var savePath = new File (decodeURI(outputFolder + "/" + currentAction.outputName + "_" + pad(i, 4)));
+        
+        SavePNG(savePath);
+        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+      
+      } //end [j][i]
     }   //end [k]
-
-}   //end[n]
+  }     //end [n]
+})();
 //ITERATION CODE ENDS HERE.
 
 
 //pad with leading zeroes from StackOverflow: https://stackoverflow.com/a/10073788
 function pad(n, width, z) {
-    z = z || '0';
-    n = n + '';
-    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+  z = z || '0';
+  n = n + '';
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
 
 //save file function
-function SavePNG(saveFile){
-    savePath = new File (decodeURI(outputFolder + "/" + saveFile));
-    pngSaveOptions = new PNGSaveOptions(); 
-    pngSaveOptions.embedColorProfile = true; 
-    pngSaveOptions.formatOptions = FormatOptions.STANDARDBASELINE; 
-    pngSaveOptions.matte = MatteType.NONE; 
-    pngSaveOptions.quality = 9; 
-    pngSaveOptions.PNG8 = false; //24 bit PNG
-    pngSaveOptions.transparency = false; 
-    activeDocument.saveAs(savePath, pngSaveOptions, true, Extension.LOWERCASE); 
+function SavePNG(savePath){
+  pngSaveOptions = new PNGSaveOptions(); 
+  pngSaveOptions.embedColorProfile = true; 
+  pngSaveOptions.formatOptions = FormatOptions.STANDARDBASELINE; 
+  pngSaveOptions.matte = MatteType.NONE; 
+  pngSaveOptions.quality = 9; 
+  pngSaveOptions.PNG8 = false; //24 bit PNG
+  pngSaveOptions.transparency = false; 
+  activeDocument.saveAs(savePath, pngSaveOptions, true, Extension.LOWERCASE); 
 }
 
