@@ -2,21 +2,13 @@
 
 //Files and Folders to Run
 var allItems = {
-  "AMB": [
+  "ML": [
     {
-      "action": "Tunnel",
-      "outputName": "TunnelOne_PSProcTEST", 
+      "action": "LLAT",
+      "outputName": "LieLikeATombstone_IrisBlur", 
+      "outputParent": "G:/AMB/PS_Proc/Extra/", 
       "folders": [
-          "M:/SinglesVideos_WCT/Tunnel/TunnelOne/TunnelOne/TunnelOne_57-bek5__",
-          "M:/SinglesVideos_WCT/Tunnel/TunnelOne/TunnelOne/TunnelOne_33-aboriginal-dots__"
-      ],
-    },
-    {
-      "action": "WaterFlow",
-      "outputName": "WaterFlowCement_PSProc", 
-      "folders": [
-          "M:/SinglesVideos_WCT/WaterFlow/WaterFlowCement/WaterFlowCement/WaterFlowCement_53-bek1__",
-          "M:/SinglesVideos_WCT/WaterFlow/WaterFlowCement/WaterFlowCement/WaterFlowCement_57-bek5__"
+          "G:/AMB/PremierePNG/LLAT_Extra/"
       ],
     },
   ] //end "AMB" 
@@ -101,7 +93,7 @@ var actionSets = Object.keys(allItems);
         doAction(currentAction.action, currentActionSet);
 
         //Save and close image
-        var outputFolder = Folder('M:/AMB/PS_Proc/' + currentAction.outputName + "/"); 
+        var outputFolder = Folder(currentAction.outputParent + currentAction.outputName + "/"); 
         if (!outputFolder.exists) {outputFolder.create();}
         
         var savePath = new File (decodeURI(outputFolder + "/" + currentAction.outputName + "_" + pad(i, 4)));
